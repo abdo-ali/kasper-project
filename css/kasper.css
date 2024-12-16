@@ -298,28 +298,32 @@ header nav .form i{
 .services{
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
-    width: 100vw;
+    /* width: 100vw; */
 }
-.services .services-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-    grid-column-gap: 40px;
-    grid-row-gap: 60px;
-
+@media (min-width: 768px) {
+    .services .services-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+    
+    }
 }
 .services .services-container .srv-box{
     display: flex;
-    gap: 30px;
-    max-width: 100%;
 }
-services .services-container .srv-box .text{
-    max-width: 100%;
+.services .services-container .srv-box i{
+    margin-right: 50px;
 }
 @media (max-width: 767px) {
     .services .services-container .srv-box{
         display: flex;
         flex-direction: column;
         text-align: center;
+        margin-bottom: 40px;
+    }
+    .services .services-container .srv-box i{
+        margin: 0 0 30px;
     }
 }
 .services .services-container .srv-box .text h3{
@@ -330,7 +334,7 @@ services .services-container .srv-box .text{
     color: var(--p-color);
     line-height: 2;
 }
-/* start services  */
+/* end services  */
 /* start design */
 .design{
     padding-top: var(--section-padding);
@@ -754,5 +758,286 @@ services .services-container .srv-box .text{
     font-weight: 900;
     margin-left: 10px;
 }
-
 /* end qaute */
+/* start pricing */
+.pricing {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.pricing .plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px , 1fr));
+    gap: 30px;
+}
+.pricing .plans .plan {
+    background-color: #fcfcfc;
+}
+.pricing .plans .plan .head {
+    padding: 30px;
+    text-align: center;
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan .head h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.pricing .plans .plan .head span {
+    font-size: 60px;
+    font-weight: bold;
+}
+.pricing .plans .plan .head span::before {
+    content: "$";
+    font-size: 25px;
+    position: relative;
+    top: -30px;
+    margin-right: 10px;
+    font-weight: normal;
+}
+.pricing .plans .plan .head span::after {
+    content: "/Mo";
+    font-size: 25px;
+    position: relative;
+    right: -15px;
+}
+.pricing .plans .plan ul{
+    border-bottom: 1px solid var(--main-color);
+}
+.pricing .plans .plan ul li{
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+    content: "";
+    width: 150px;
+    height: 1px;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.pricing .plans .plan .foot a {
+    padding: 10px 20px;
+    margin: 20px auto;
+    border: 1px solid var(--main-color);
+    display: block;
+    width: fit-content;
+    text-decoration: none;
+}
+.pricing .contact-text {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 20px;
+}
+.pricing .container > a{
+    display: block;
+    text-align: center;
+    background-color: var(--main-color);
+    width: fit-content;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: white;
+    margin: 0 auto;
+}
+/* end pricing */
+/* start subscribe */
+.subscribe {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+}
+.subscribe::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0 , 50%);
+}
+.subscribe .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 991px) {
+    .subscribe .container {
+        flex-direction: column;
+    }
+}
+.subscribe .container form{
+    width: 500px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.subscribe .container form i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+}
+.subscribe .container form input[type="email"]{
+    border: 1px solid white;
+    border-right: none;
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    background: none;
+    width: calc(100% - 130px);
+}
+.subscribe .container form input[type="email"]::placeholder{
+    color: white;
+}
+.subscribe .container form input[type="submit"]{
+    background-color: var(--main-color);
+    padding: 20px;
+    border: 1px solid white;
+    border-left: none;
+    width: 130px;
+    color: white;
+    text-transform: uppercase;
+}
+.subscribe .container form input[type="email"]:focus,
+.subscribe .container form input[type="submit"]:focus {
+    outline: none;
+}
+.subscribe p{
+    margin-left: 50px;
+    line-height: 2;
+}
+@media (max-width: 991px) {
+    .subscribe p{
+        margin: 30px 0 0;
+    }
+}
+/* start subscribe */
+/* start contact */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.contact .content {
+    display: flex;
+    justify-content: space-between;
+}
+@media (max-width: 767px) {
+    .contact .content {
+        flex-direction: column;
+    }
+}
+.contact .content form {
+    flex-basis: 70%;
+}
+.contact .content form .main-input{
+    display: block;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: 1px solid #aaa;
+}
+.contact .content form textarea.main-input{
+    height: 200px;
+}
+.contact .content form .main-input:focus{
+    outline: none;
+}
+.contact .content form input[type="submit"] {
+    background-color: var(--main-color);
+    color: white;
+    padding: 20px;
+    text-transform: uppercase;
+    border: none;
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+}
+.contact .content .info{
+    flex-basis: 25%;
+}
+@media (max-width: 767px){
+    .contact .content .info {
+        order: -1;
+        text-align: center;
+    }
+}
+.contact .content .info h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.contact .content .info .phone{
+    display: block;
+    color: var(--p-color);
+    margin-bottom: 10px;
+}
+.contact .content .info h4:nth-of-type(2){
+    margin-top: 90px;
+}
+@media (max-width: 767px) {
+    .contact .content .info h4:nth-of-type(2){
+        margin-top: 30px;
+    }
+}
+.contact .content .info address{
+    line-height: 2;
+    color: var(--p-color);
+}
+@media (max-width: 767px) {
+    .contact .content .info address{
+        margin-bottom: 40px;
+    } 
+}
+/* end contact */
+/* start footer */
+footer {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+footer::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0 , 50%);
+}
+footer .container {
+    position: relative;
+}
+footer .container img {
+    margin-bottom: 20px;
+}
+footer .container p:not(.copywrite){
+    text-transform: uppercase;
+    padding: 20px;
+    font-size: 22px;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: 20px auto;
+}
+footer .container .social-icons i{
+    margin: 15px 20px;
+}
+footer .container .copywrite{
+    margin-top: 60px;
+}
+footer .container .copywrite span {
+    font-weight: bold;
+    color: var(--main-color);
+}
+/* end footer */
